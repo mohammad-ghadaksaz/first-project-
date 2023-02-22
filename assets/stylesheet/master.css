@@ -1,0 +1,265 @@
+
+/* <!-- ---------------- www.bmw.com --------------------- --> */
+
+.container {
+    width: 100%;
+    height: 180vh;
+    background-color: rgb(255, 255, 255);
+    display: grid;
+    gap: 2px;
+    grid-template-areas: "h h h h h h h h "
+        "h h h h h h h h "
+        "h h h h h h h h "
+        "h h h h h h h h "
+        "a a a a s s s s "
+        "a a a a s s s s "
+        "a a a a s s s s "
+        "a a a a s s s s "
+        "a a a a s s s s "
+}
+
+/* .container>* {
+    border: 1px solid black;
+} */
+
+.container>header {
+    grid-area: h;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    background-image: url(../images/header/dee-00-teaser-hd.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
+}
+
+.container>header>h1 {
+    color: white;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 60px;
+    font-weight: bold;
+    position: absolute;
+    bottom: 40%;
+    left: 10%;
+    padding: 10px;
+}
+
+.container>header>button {
+    position: absolute;
+    bottom: 25%;
+    left: 10%;
+    border: 2px solid white;
+    /* color: white; */
+    width: 100px;
+    height: 40px;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0);
+    transition: .4s;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.container>header>button:hover {
+    background-color: white;
+    color: black;
+}
+
+.container>header>nav {
+    position: absolute;
+    top: 0;
+    left: 20%;
+    width: 40%;
+    height: 100px;
+}
+
+.container>header>nav::before {
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    content: '';
+}
+
+.container>header>nav>ul {
+    width: 100%;
+    height: 100%;
+    /* background-color: white; */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.container>header>nav>ul>li {
+    color: white;
+    width: 33.33%;
+    height: 100%;
+    /* border: 1px solid red; */
+    /* background-color: black; */
+    position: relative;
+    transition: 1s !important;
+}
+
+.container>header>nav>ul>li:hover .submenu {
+    display: flex;
+    flex-wrap: wrap;
+    visibility: visible;
+}
+
+.submenu {
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+    width: 70%;
+    border: 1px solid white;
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    top: 100%;
+    display: none;
+    visibility: hidden;
+    transition: 1s !important;
+    z-index: 99999;
+}
+
+.submenu>li {
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    padding-left: 5px;
+    border-bottom: 1px solid rgb(255, 255, 255);
+    color: white;
+    transition: 1s !important;
+    cursor: pointer;
+    padding: 10px 5px;
+}
+
+.submenu>li:hover {
+    background-color: white;
+    color: blue;
+}
+
+.container>header>nav>ul>li>a {
+    width: 100%;
+    height: 100%;
+    /* text-transform: capitalize; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1s;
+    text-transform: capitalize;
+    font-weight: bolder;
+    font-size: 25px;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.container>header>nav>ul>li>a:hover {
+    color: rgb(33, 93, 247);
+    background-color: yellow;
+}
+
+.container>header>figure {
+    position: absolute;
+    top: 20px;
+    right: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container>section {
+    grid-area: s;
+    background-image: url(../images/body/1.jpg);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    transition: 8s !important;
+}
+
+.container>section>button,
+.container>aside>button {
+    /* position: absolute; */
+    bottom: 25%;
+    left: 10%;
+    border: 2px solid white;
+    /* color: white; */
+    width: 100px;
+    height: 40px;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0);
+    transition: .4s;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-weight: bold;
+    z-index: 999;
+}
+
+.container>aside {
+    grid-area: a;
+    background-image: url(../images/body/2.jpg);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    transition: 8s !important;
+}
+
+.container>section>button:hover,
+.container>aside>button:hover {
+    background-color: white;
+    color: black;
+}
+
+.container>section>*,
+.container>aside>* {
+    position: absolute;
+}
+
+.container>aside::after,
+.container>section::after {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.677);
+    content: '';
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: 1;
+    transition: 1.2s;
+    opacity: 0;
+}
+
+.container>section:hover::after,
+.container>aside:hover::after {
+    opacity: 1;
+}
+
+.container>section:hover,
+.container>aside:hover {
+    background-size: 130%;
+}
+
+.container>section>h2,
+.container>aside>h2 {
+    left: 10%;
+    top: 50%;
+    font-size: 35px;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    color: white;
+    text-transform: capitalize;
+    z-index: 999;
+}
+
+.container>section>h4,
+.container>aside>h4 {
+    top: 45%;
+    left: 10%;
+    font-size: 20px;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    color: white;
+    text-transform: uppercase;
+    z-index: 999;
+}
